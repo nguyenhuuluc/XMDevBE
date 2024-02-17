@@ -1,0 +1,199 @@
+﻿@{
+    Layout = "~/Areas/admin/views/shared/_Layout.cshtml";
+}
+<div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add / Edit Product</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+                <!--
+              <div class="box-body">
+                <input type="number" id="id" hidden="hidden" />
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <label for="MaLoaiSP">MaLoaiSP</label>
+                    <input type="text" class="form-control" id="MaLoaiSP" placeholder="Enter LoaiSP_Id">
+                </div>
+                <div class="form-group">
+                    <label for="MaThuongHieu">MaThuongHieu</label>
+                    <input type="text" class="form-control" id="MaThuongHieu" placeholder="Enter ThuongHieu_Id">
+                </div>
+                <div class="form-group">
+                  <label for="price">Price</label>
+                  <input type="text" class="form-control" id="price" placeholder="Price">
+                </div>
+                <div class="form-group">
+                    <label for="SL">Số lượng</label>
+                    <input type="text" class="form-control" id="SL" placeholder="Quantity">
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="text" class="form-control" id="image" placeholder="Image">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" placeholder="Description">
+                </div>
+        </div>-->
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <a href="/admin/home/addPrd" style="text-decoration: none; background-color: #3c8dbc; padding: 8px 25px; color: white; border-radius: 4px;">Add Product</a>
+              </div>
+            </form>
+          </div>
+<div class="box">
+    <div class="box-header with-border">
+        <h3 class="box-title">Product Table</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 10px">ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer clearfix">
+        <ul class="pagination pagination-sm no-margin pull-right">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        let lstcate = [];
+        $(document).ready(function () {
+            getList();
+        });
+
+        function getList() {
+            $.ajax({
+                url: "/admin/home/getList",
+                type: "GET",
+                contentType: "application/json",
+                beforeSend: function () {
+                    console.log("before send...!");
+                },
+                success: function (res) {
+                    if (res && res.length > 0) {
+                        lstcate = res;
+                        $('.table-bordered tbody').html('');
+                        for (let i = 0; i < res.length; i++) {
+                            let cate = res[i];
+                            let html = `<tr>
+                                            <td>${cate.id}</td>
+                                            <td>${cate.tenSP}</td>
+                                            <td>${cate.giaBan}</td>
+                                            <td><img style="width:75px; height:75px;" src="${cate.hinhAnh}"></td>'
+                                            <td>${cate.moTa}</td>
+                                            <td>
+                                                <button class="btn btn-success" onclick="edit(${cate.id})">Edit</button>
+                                                        <button class="btn btn-danger" onclick="deletePrd(${cate.id})">Delete</button>
+                                            </td>
+                                         </tr>`;
+                            $('.table-bordered tbody').append(html);
+                        }
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function add(){
+            let id = $('#id').val();
+            let obj = {
+                Id: id ? id : 0,
+                TenSP: $('#name').val(),
+                LoaiSP_Id: $('#MaLoaiSP').val(),
+                ThuongHieu_Id: $('#MaThuongHieu').val(),
+                GiaBan: $('#price').val(),
+                SoLuong: $('#SL').val(),
+                HinhAnh: $('#image').val(),
+                MoTa: $('#description').val(),
+            }
+            $.ajax({
+                url: "/admin/home/add",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(obj),
+                beforeSend: function () {
+                    console.log("loading...");
+                },
+                success: function (res) {
+                    if (res > 0) {
+                        if (obj.Id > 0) {
+                            alert("Cập nhật thông tin danh mục thành công");
+                        } else {
+                            alert("Thêm mới danh mục thành công");
+                        }
+                        $('#id').val(0);
+                        $('#MaLoaiSP').val('');
+                        $('#MaThuongHieu').val('');
+                        $('#name').val('');
+                        $('#price').val('');
+                        $('#SL').val('');
+                        $('#image').val('');
+                        $('#description').val('');
+                        console.log(obj);
+                        getList();
+                    } else {
+                        alert("Thêm mới danh mục thất bại");
+                        console.log(obj);
+                    }
+                    console.log(obj);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            })
+        }
+
+        function edit(id) {
+            window.location.replace("https://localhost:7262/admin/home/Edit?id=" + id)
+        }
+
+        function deletePrd(id){
+            let cate = id;
+            if(cate) {
+                console.log(cate);
+                $.ajax({
+                    url: '/admin/home/delete?id=' + cate,
+                    type: 'DELETE',
+                    error: function () {
+                    },
+                    success: function (result) {
+                        alert('Xóa thành công!');
+                        getList();
+                    }
+                });
+            } else {
+                alert('Xóa không thành công!');
+            }
+        }
+    </script>
+}

@@ -1,0 +1,201 @@
+
+.bannerDoiTac{
+    position: relative;
+    background-color: #f3f3f3;
+}
+.bannerDoiTac .banner_img img{
+    z-index: -1;
+    width: 100%;
+
+}
+
+.logo_doitac img{
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+} 
+.khoangtrang_1{
+    height: 40px;
+}
+.outdoitac{
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    top: 700px;
+}
+.bannerDoiTac .khoangtrang_1{
+    height: 20px;
+}
+.out_doitac .row{
+    margin-top: -3rem;
+    background-color: #ffffff;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+.doitac{
+    display: flex;
+    flex-wrap: wrap; 
+    padding-top: 0rem;
+    justify-content: center;
+}
+.sanphamnb{
+    margin-bottom: 1rem;
+}
+.doitac .logo img{
+
+    width: 270px;
+    /* height: 189px; */
+    margin: 0 auto;
+}
+.content{
+    padding: 2rem 3rem 5rem 2rem;
+}
+.content h4{
+    font-family: Gotham-Ultra;
+    color: #bd945f;
+}
+.content p{
+    font-family: Gotham-Medium;
+    color: #2c2e53;
+    font-size: 13px;
+
+}
+.khoangtrong{
+    height: 60px;
+    background-color: #f3f3f3;
+}
+/* ------------đây là giới thiệu */
+.doitac .gt_1{
+    display: flex;
+    justify-content: center;
+}
+
+.doitac .content{
+    width: 45%;
+}
+.out_doitac .bottomSpnb{
+    height: 0px;
+}
+.gt_0{
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.gt_1 img{
+    margin-top: 2rem;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width:85%;
+    height:65%;
+}
+.doitac .content p{
+    font-size: 13px;
+}
+.tamnhin{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+.tamnhin img{ 
+    width: 85%;
+}
+.tamnhin p{
+    margin-top: 1.5rem;
+    width: 85%;
+}
+.us_out img{
+    transform: scale(1.3);
+}
+.about_br_top{
+    margin-bottom: 0;
+    border: 3px solid #bd945f;
+    background-color: #fff;
+}
+.about_b .about_br_top h4{
+    font-family: Gotham-medium;
+    font-size: 13px;
+    margin-bottom: 0rem;
+}
+.about_b .about_br_top p{
+    font-size: 11px;
+    font-family: Gotham-medium;
+}
+/*------------ đây là tin tức --------------*/
+.tintuc{
+    background-color: #f3f3f3f3;
+}
+.tintuc .sanphamnb{
+    padding: 0;
+    margin: 0;
+}
+.tintuc_in{
+    background-color: #fff;
+
+
+}
+.tintuc_in .row{
+    margin-top: 30px;
+}
+.tintuc_in .row .tintuc_1{
+    display: flex;
+    justify-content: center;
+}
+.image{
+    width: 90%;
+}
+.tintuc_1 .image img,h6,p{
+    width: 100%;
+}
+.tintuc_1 h6{
+    margin: 5px;
+    color: #bd945f;
+    font-family: Gotham-ultra;
+}
+.tintuc p{
+    font-size: 10px;
+    font-family: Gotham-Medium;
+}
+.tintuc h5{
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+}
+.tintuc .tintuc_in .slide2{
+    width: 80%;
+}
+.tintuc .tintuc_in .slide2 img{
+    width: 100%;
+    transform: scale(1);
+}
+.fourimg{
+    margin-top: .5rem;
+    display: flex;
+    justify-content: space-around;
+}
+.image .fourimg img{
+    width: 25%;
+}
+.anh{
+    margin: 0 auto;
+    width:1450px;
+    height: 450px;
+    background-repeat: no-repeat;
+    position: relative; 
+}
+.anh .anh_in{
+    display: flex;
+}
+.anh .text h6{
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    width: 400px;
+    margin: 0 auto;
+    color: #f3f3f3;
+}

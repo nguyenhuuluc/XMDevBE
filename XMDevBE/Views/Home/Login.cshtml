@@ -1,0 +1,124 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="~/css/login.css" rel="stylesheet" />
+</head>
+<body>
+    <section>
+        <div class="form_box">
+            <div class="form_value">
+                <form  >
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input id="fName" type="text" required>
+                        <label for="">Name</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input id="fPass" type="password" required>
+                        <label for="">Password</label>
+                    </div>
+                    <!-- <div class="forget">
+                        <label for=""><input type="checkbox" name="" id="">Remember <a href="#">Forget Password</a></label>
+                    </div> -->
+                    <!--<button>Login</button>-->
+                    <div class="btn">
+                        <button onclick="LoginS()">
+                            Login
+                        </button>
+                    </div>
+                </form>
+                    <div class="register">
+                    <p>Don't have a account <a href="/home/createAccount">Register</a></p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script>
+        let lstcate = [];
+        function Login() {
+            var name = $('#fName').val();
+            var pass = $('#fPass').val();
+                $.ajax({
+                    url: "/home/getuser",
+                    type: "GET",
+                    contentType: "application/json",
+                    beforeSend: function () {
+                        console.log("before send...!");
+                    },
+                    success: function (res) {
+                        lstcate = res;
+                        if(name == "Admin" && pass == "123"){
+                            alert("Success");
+                            window.location.replace("https://localhost:7262/admin/home/index")
+                        } else {
+                            for(let i = 0; i < res.length; i++)
+                            {
+                                let cate = res[i];
+                                if (cate.tenDN == name && cate.matKhau == pass) {
+                                    alert("Success");
+                                    window.location.replace("https://localhost:7262/home/TrangChu")
+                                } else {
+                                    alert("Fail");
+                                }
+                            }
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                }); 
+        }
+
+        function LoginS() {
+            var name = $('#fName').val();
+            var pass = $('#fPass').val();
+            $.ajax({
+                url: "/home/getuser",
+                type: "GET",
+                contentType: "application/json",
+                beforeSend: function () {
+                    console.log("before send...!");
+                },
+                success: function (res) {
+                    lstcate = res;
+                    
+                        for (let i = 0; i < res.length; i++) {
+                            let cate = res[i];
+                            if (name == "Admin" && pass == "admin123") {
+                                alert("Đăng nhập admin thành công!");
+                                window.location.replace("https://localhost:7262/admin/home/index")
+                                break;
+                            } 
+                            else if (cate.tenDN == name && cate.matKhau == pass) {
+                                alert("Đăng nhập vào website thành công!");
+                                window.location.replace("https://localhost:7262/home/TrangChu");
+                                break;
+                            } else {
+                                alert("Fail");
+                            }
+                        }
+                    
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

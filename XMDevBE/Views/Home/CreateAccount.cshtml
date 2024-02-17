@@ -1,0 +1,90 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="~/css/CreateAccount.css" rel="stylesheet" />
+</head>
+<body>
+    <section>
+        <div class="form_box">
+            <div class="form_value">
+                <form action="">
+                    <h2>Create Account</h2>
+                    <input type="number" id="id" hidden="hidden" />
+                    <div class="inputbox">
+                        <input id="fullName" type="text" required>
+                        <label for="">Full Name</label>
+                    </div>
+                    <div class="inputbox">
+                        <input id="fName" type="text" required>
+                        <label for="">Name</label>
+                    </div>
+                    <div class="inputbox">
+                        <input id="fPass" type="password" required>
+                        <label for="">Password</label>
+                    </div>
+                    <div class="inputbox">
+                        <input id="cPass" type="password" required>
+                        <label for="">Confirm Password</label>
+                    </div>
+                    <div class="btn">
+                        <button onclick="add()">
+                            Create
+                        </button>
+                    </div>
+                    <div class="register">
+                        <p>Already have an account? <a href="/home/login">Login now</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script>
+        function add(){
+            let id = $('#id').val();
+            let obj = {
+                Id: id ? id : 0,
+                FullName: $('#fullName').val(),
+                UserName: $('#fName').val(),
+                Pass: $('#fPass').val()
+            }
+            console.log(obj.FullName);
+            console.log(obj.UserName);
+            console.log(obj.Pass);
+            $.ajax({
+                url: "/home/AddUser",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(obj),
+                beforeSend: function () {
+                    console.log("loading...");
+                },
+                success: function (res) {
+                    if (res > 0) {
+                        alert("Thêm mới tài khoản thành công");
+                    } else {
+                        alert("Thêm mới tài khoản thất bại");
+                    }
+                },
+                error: function (err) {
+                console.log(err);
+                }
+            })
+        }
+    </script>
+    
+</body>
+</html>

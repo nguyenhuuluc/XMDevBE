@@ -1,0 +1,988 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.top{
+    z-index: 7;
+}
+.main{
+    font-family: Gotham-Medium;
+    display: flex;
+    justify-content: space-around;
+}
+.main .logo{
+    margin: 1rem 0;
+}
+.divrong{
+    width: 300px;
+}
+.main .logo img{
+    width: 6rem;
+}
+.navs{
+    width: 800px;
+    justify-content: space-between;
+}
+.gachduoi{
+    width: 1px;
+    height: 5px;
+    border: 3px solid #bd945f;
+    opacity: 0;
+}
+.navh:hover .gachduoi{
+    width: 60px;
+    height: 5px;
+    border: 3px solid #bd945f;
+    opacity: 1;
+    transition: 0.5s;
+}
+/* nút 3 dấu gạch */
+.navh{
+    display: flex;
+    justify-content: center;
+}
+.navh2{
+    opacity: 0;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+.navh2 .button2{
+    margin-top: 50px;
+    width: 50px;
+    align-items: center ;
+    
+}
+.navh2 .button2 .span {
+    height: 1px;
+    width: 50px;
+    background-color: #000;
+
+}   
+.navh2 .button2 .span:nth-child(1) {
+    height: 2px;
+    width: 50px;
+    background-color: #000;
+    margin-bottom: 10px;
+}
+.navh2 .button2 .span:nth-child(3) {
+    margin-bottom: 10px;
+}
+.navh2 .button2 .span:nth-child(4) {
+    /* display: none; */
+    height: 2px;
+}
+.spanDeg{
+    transform: rotateZ(45deg); 
+    padding: 1px 0;
+}
+.spanDeg2{
+    transform: rotateZ(-45deg); 
+    height: 10px;
+    padding: 1px 0;
+}
+.spanNone{
+    opacity: 0;
+}
+.fa-user {
+    /* padding-left: 1.2rem; */
+    font-size: 22px;
+    padding-bottom: 10px;
+    color: black;
+}
+/* kết thúc 3 dấu gạch */
+.banner{
+    background-color: #f3f3f3;
+    height: 1700px;
+    background-image: url(../img/banner.png);
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative; 
+}
+.banner .banner_in{
+    padding: 8em 4em 12em 4em;
+}
+
+.banner .banner_in h3:first-child{
+    color: #2c2e53;
+}
+.banner .banner_in h3{
+    color: #bd945f;
+    font-family:Gotham-Ultra ;
+    text-transform: uppercase;
+}
+.banner .banner_in p{
+    font-family: Gotham-Medium;
+    font-size: 1rem;
+    width: 60%;
+    text-align: justify;
+}
+.banner .banner_in button{
+    border: 2px solid #bd945f;
+    background-color: #bd945f;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+    font-family:Gotham-Medium ;
+    color: #ffffff;
+}
+.len{
+    margin-top: 200px;
+    background-color: #ffffff;
+    width: 1130px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row .item p{
+    margin-left: 60px;
+}
+.slide{
+    width: 600px;
+    margin: 0 auto;
+    background-color: #f3f3f3;
+}
+.image-item{
+    transform: scale(0.95);
+}
+.image-item .image{
+    width: 600px;
+    margin: 0 auto;
+}
+.len_p{
+    font-family: Gotham-Ultra ;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.sanphamnb{
+    text-align: center;
+    font-family:Gotham-Ultra ;
+    margin: 2.5rem auto;
+}
+.bottomSpnb{
+    height: 3px;
+    border: 4px solid #bd945f;
+    width: 150px;
+    margin: 0 auto;
+}
+.slide .slick-next{
+    color: #4d320e;
+}
+.star{
+    color: #bd945f;
+    width: 108px;
+    margin: 0 auto;
+    
+}
+.slide_ct h4{
+
+    text-align: center;
+}
+.slide_ct p{
+    text-align: center; 
+    color: #888888;
+    margin: 0;
+}
+.slide_ct .p_price{
+    text-align: center;
+    color: #222222;
+}
+.about_us{
+    height: 800px;
+    background-image: url(../img/bg-about-us.jpg);
+    background-repeat: no-repeat;
+    background-size:contain;
+    position: relative;
+    margin: 0 auto;
+    z-index: 20;
+}
+.about_us .overlay {
+    height: 800px;
+    opacity: 0.8;
+    background-color: rgb(10, 6, 6);
+    z-index: -1;
+  }
+.about_us .sanphamnb h2{
+    top: 65px;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 28px;
+}
+.about_us_in{
+    top: 0;
+    width: 100%;
+    position: absolute;
+}
+.about_us .bottomSpnb{
+    margin-top: 00px;
+}
+.about_cover{
+    width: 100%;
+    position: absolute;
+    top: 130px;
+}
+.about_mid{
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    color: #ffffff;
+}
+.about_mid h5{
+    text-transform: uppercase;
+    word-spacing: 5px;
+    font-size: 24px;
+    margin-bottom: -3px;
+}
+.about_mid .about_mid_l img{
+    width: 450px;
+}
+.about_mid .about_mid_r{
+    margin-left: 20px;
+}
+.about_mid .about_mid_r h5:nth-child(2){
+    display: inline-block;
+    font-family: Gotham-Ultra;
+
+}
+.about_mid .about_mid_r h5:nth-child(1){
+    display: inline-block;
+}
+.about_mid_r p{
+    font-size: 11.98px;
+    margin-bottom: 2px;
+
+}
+.about_m_r_b{
+    display: flex;
+    justify-content: space-between;
+}
+.about_m_r_b img{
+    width: 100px;
+}
+.about_us_in2{
+    top: 0;
+    width: 100%;
+    position: absolute;
+    margin-top: 400px;
+}
+.about_b{
+    display: flex;
+    width: 900px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.about_br_top{
+    width: 440px;
+    background-color: #f3f3f3;
+    margin-bottom: 20px;
+    height: 100px;
+}
+.about_br_top .us_out{
+    display: flex;
+}
+.about_b .us_out img{
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 55px;
+    height: 55px;
+}
+.about_b .about_br_top h4{
+    text-transform: uppercase;
+    margin: 28px 0 0 20px;
+    font-family: Gotham-Ultra;
+    color: #bd945f;
+    font-size: 20px;
+}
+.about_b .about_br_top p{
+    margin-left: 20px;
+}
+.about_b .tintucl img {
+    width: 445px;
+}
+.ttr img{
+    width: 120px;
+    margin-bottom: 15px;
+}
+.tintucr{
+    width: 433px;
+}
+.tintucr .ttr{
+    display: flex;
+}
+.ttrr{
+    color: #bd945f;
+    margin-left: 20px;
+}
+.tintucr .ttr p{
+    font-size: 9px;
+    color: #767676;
+    margin-bottom: 0;
+}
+.tintucr  a{
+    color: #bd945f;
+}
+.slide2{
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.image-slider2 img{
+    height: 60px;
+}
+.add_tt{
+    background-image: url(../img/lienhe-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 247px;
+    
+    position: relative;
+    margin: 0 auto;
+}
+.add_tt_in{
+    color: #ffffff;
+    display: flex;
+    width: 800px;   
+    margin: 0 auto;
+    padding: 50px;
+    justify-content: space-between;
+    font-family: Gotham-medium ;
+    font-size: 15px;
+}
+.add_tt_in p{
+    margin-bottom: 0;
+}
+.add_tt_in h6{
+    margin-top: 0;
+    font-family: Gotham-ultra ;
+}
+
+.add_tt_in .bottomSpnb{
+    border: 4px solid #ffffff;
+    background-color: #f3f3f3;
+    width: 190px;
+}
+input[type=text] {
+    padding:10px;
+}
+input[type=submit] {
+    padding:10px;
+    margin:10px 0; 
+    margin-left: 40px;
+    width: 100px;
+    background-color: #f3f3f3;
+    border: none;
+}
+.ghe{
+    position: absolute;
+    bottom: 50px;
+    margin-left: 30px;
+}
+.ghe img{
+    width: 270px;
+}
+.lienhe{
+    z-index: 2;
+    height: 220px;
+    background-color: #363636;
+    /* width: 1473px; */
+    margin: 0 auto;
+}
+.lienhe_in{
+    display: flex;
+    /* width: 1200px; */
+    margin: 0 auto;
+    justify-content: space-between;
+    color: #f3f3f3;
+    padding-top: 50px;
+}
+.lienhe .bottomSpnb{
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    width:60px;
+    margin-left: 0;
+}
+.lienhe p{
+    font-family: Gotham-Thin;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+.social{
+    margin-top: 10px;
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+}
+.social i{
+    font-size: 30px;
+}
+.ketnoi img{
+    margin-top: 20px;
+    width: 100px;
+}
+@media (max-width: 1900.98px) { 
+    /* .add_tt{
+        height: 189.5px;
+        width: 100%;
+    } */
+   
+    .slide{ 
+        width: 1000px;
+    }
+    .slide img{
+        width: 250px;
+    }
+    .col{
+        width: 25%;
+    }
+    .len{
+        margin: 7rem auto auto auto;
+        width: 80%;
+     }
+     .lienhe_in .row{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
+@media (max-width: 1300.98px) { 
+    .len{
+        margin-top: 1rem;
+    }
+}
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 1201.98px) { 
+         .len{
+            margin-top: -3rem;
+         }
+         .banner{
+            
+            height: 1400px;
+         }
+             .about_us{ 
+                background-size: cover;
+             }
+             .about_us.about_mid{
+                transform: scale(0.8);
+                width: 400px;
+                margin: 0 auto;
+             }
+             .ghe img{
+                width: 170px;
+             }
+             .ghe{
+               bottom: 40px;
+                
+             }
+
+             .add_tt_in .bottomSpnb{
+                width: 150px;
+            }
+             .add_tt{
+                height: 190px;
+                background-size: cover;
+             }
+             .add_tt_in{
+                width: 700px;
+                font-size: 14px;
+            }
+            .add_tt_in h6{
+                font-size: 14px;
+            }
+            input[type=text] {
+               width: 250px;
+            }
+            input[type=submit] {
+                margin-left: 80px;
+                width: 50px;
+            }
+            .lienhe_in .row{
+                width: 70%;
+            }
+            .slide2{
+                width: 800px;
+             }
+             .slide2 img{
+                width: 80px;
+                height: 65px;
+             }
+    }
+
+    @media (max-width: 1101.98px) {
+        .len{
+            margin-top: -6rem;
+        }
+    }
+    @media (max-width: 992.98px) { 
+        /* 3 dấu gạch */
+        nav{
+            opacity: 0;
+        }
+        .navf{
+            /* position: fixed; */
+            width: 100vw;
+            height: 100vh;
+        }
+        .nav_1{
+            opacity: 1;
+            width: 100%;
+            background-color: #ffffff;
+            color: #bd945f;
+
+        }
+        .navh2{
+            display: flex;
+            justify-content: center;
+            opacity: 1;
+            z-index: 100;
+        }
+        /* kế thúc 3 dấu gạch */
+        .lienhe_in .row{
+            width: 80%;
+        }
+        .about_us{
+            height: 1400px;
+        }
+        .banner_in{
+            padding: -6rem;
+            /* font-size: .2rem; */
+            }
+                .banner_in h3:first-child{
+                    padding-top: -10rem;
+                /* font-size: 1rem; */
+            }
+            /* .banner_in h3{
+                font-size: 1rem;
+            } */
+            .banner .banner_in p{
+                font-size: 12px;
+            }
+            .banner .banner_in button{
+                width:120px ;
+                font-size: .8rem;
+            }
+        .about_us .overlay {
+            height: 1400px;
+            opacity: 0.8;
+            background-color: #110404;
+            z-index: -1;
+          }
+        .banner{
+            height: 2000px;
+        }
+        .len{
+            width: 80%;
+            margin: -8rem auto auto auto;
+         }
+         .ghe img{
+            width: 120px;
+         }
+         .ghe{
+           bottom: 40px;
+            
+         }
+         .slide2{
+            width: 600px;
+         }
+         .slide2 img{
+            width: 80px;
+            height: 60px;
+         }
+         .slide{
+            width: 700px;
+         }
+         .slide img{
+            width: 230px;
+         }
+         .add_tt_in .bottomSpnb{
+            width: 100px;
+        }
+         .add_tt{
+            height: 150px;
+            background-size: cover;
+         }
+         .add_tt_in{
+            width: 500px;
+            font-size: 10px;
+        }
+        .add_tt_in h6{
+            font-size: 10px;
+        }
+        input[type=text] {
+           width: 150px;
+        }
+        input[type=submit] {
+            margin-left: -20px;
+            width: 50px;
+        }
+         /*---------- ve chung toi */
+     .about_cover{
+        top: 120px;
+    }
+    .about_mid{
+        width:550px;
+        margin: 0 auto;
+        display: block;
+    }
+    .about_mid .about_mid_l img{
+        width: 550px;
+    }
+    .about_mid .about_mid_r{
+        margin: 0 auto;
+        width: 550px;
+        font-size: 18px;
+    }
+    .about_mid .about_mid_r h5:nth-child(2){
+        font-size: 20px;
+    }
+    .about_mid .about_mid_r h5:nth-child(1){
+        display: inline-block;
+        font-size: 20px;
+    }
+    .about_mid .about_mid_r h5{
+        font-size: 20px;
+    }
+    .about_mid_r p{
+        font-size: 14px;
+    }
+    .about_m_r_b img{
+        width: 120px;
+    }
+    .about_us_in2{
+        margin-top: 790px;
+    }
+    
+    .about_b{
+        display: block;
+        width: 550px;
+        margin: 0 auto;
+    }
+    .about_br_top{
+        width: 550px;
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 80px;
+    }
+    .about_br_top .us_out{
+        display: flex;
+    }
+    .about_b .us_out img{
+        margin-top: 20px;
+        margin-left: 10px;
+        width: 35px;
+        height: 35px;
+    }
+    .about_b .about_br_top h4{
+        margin: 20px 0 0 40px;
+        font-size: 18px;
+    }
+    .about_b .about_br_top p{
+        margin-left: 40px;
+    }
+     /* het ve chung toi */
+     /* --------------tin tuc */
+     .tintuc .about_b{
+        width: 550px;
+        margin: 0 auto;
+     }
+     .about_b .tintucl img {
+        width: 550px;
+        margin: 0 auto 20px auto;
+    }
+    .ttr img{
+        width: 100px;
+        margin-bottom: 15px;
+    }
+    .tintucr{
+        width: 550px;
+    }
+    .tintucr .ttr{
+        display: flex;
+    }
+    .ttr h6{
+        font-size: 15px ;
+    }
+    .ttrr{
+        color: #bd945f;
+        margin-left: 20px;
+    }
+    .tintucr .ttr p{
+        font-size: 10px;
+        color: #767676;
+        margin-bottom: 0;
+    }
+    .tintucr  a{
+        color: #bd945f;
+    }
+     /* end tin tuc */
+
+    }
+    @media (max-width: 861.98px) {
+
+        .len{
+            padding-top:-10rem ;
+        }
+    }
+/* // Small devices (landscape phones, less than 768px) */
+ @media (max-width: 767.98px) { 
+.banner{
+    height: 1850px;
+}
+
+.banner_in{
+    padding-top: -2rem;
+    font-size: .2rem;
+    transform: scale(.9);
+    }
+        .banner_in h3:first-child{
+        font-size: 1rem;
+    }
+    .banner_in h3{
+        font-size: 1rem;
+    }
+    .banner .banner_in p{
+        font-size: 12px;
+    }
+    .banner .banner_in button{
+        width:120px ;
+        font-size: .8rem;
+    }
+     .about_us{
+        margin-top: 00px;
+        height: 1050px;
+        background-size: cover;
+     }
+     .about_us .overlay {
+        height: 1050px;
+        opacity: 0.8;
+        background-color: #110404;
+        z-index: -1;
+      }
+      .len{
+        margin-top: 0rem;
+      }
+     /*---------- ve chung toi */
+     .about_cover{
+        top: 120px;
+    }
+    .about_mid{
+        width:350px;
+        margin: 0 auto;
+        display: block;
+    }
+    .about_mid .about_mid_l img{
+        width: 350px;
+    }
+    .about_mid .about_mid_r{
+        margin: 0 auto;
+        width: 350px;
+        font-size: 15px;
+    }
+    .about_mid .about_mid_r h5:nth-child(2){
+        font-size: 15px;
+    }
+    .about_mid .about_mid_r h5:nth-child(1){
+        display: inline-block;
+        font-size: 10px;
+    }
+    .about_mid .about_mid_r h5{
+        font-size: 15px;
+    }
+    .about_mid_r p{
+        font-size: 10px;
+    }
+    .about_m_r_b img{
+        width: 80px;
+    }
+    .about_us_in2{
+        margin-top: 550px;
+    }
+    .about_b{
+        display: block;
+        width: 400px;
+        margin: 0 auto;
+    }
+    .about_br_top{
+        width: 360px;
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 60px;
+    }
+    .about_br_top .us_out{
+        display: flex;
+    }
+    .about_b .us_out img{
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 25px;
+        height: 25px;
+    }
+    .about_b .about_br_top h4{
+        margin: 10px 0 0 20px;
+        font-size: 14px;
+    }
+    .about_b .about_br_top p{
+        margin-left: 20px;
+    }
+     /* het ve chung toi */
+     /* --------------tin tuc */
+     .tintuc .about_b{
+        width: 300px;
+        margin: 0 auto;
+     }
+     .about_b .tintucl img {
+        width: 300px;
+        margin: 0 auto 20px auto;
+    }
+    .ttr img{
+        width: 80px;
+        margin-bottom: 15px;
+    }
+    .tintucr{
+        width: 300px;
+    }
+    .tintucr .ttr{
+        display: flex;
+    }
+    .ttr h6{
+        font-size: 10px ;
+    }
+    .ttrr{
+        color: #bd945f;
+        margin-left: 20px;
+    }
+    .tintucr .ttr p{
+        font-size: 7px;
+        color: #767676;
+        margin-bottom: 0;
+    }
+    .tintucr  a{
+        color: #bd945f;
+    }
+     /* end tin tuc */
+    .ghe img{
+        width:  200px;
+        transform: scale(0.9);
+        margin-left: -30px;
+        margin-bottom: 20px;
+    }
+    .ghe{
+        opacity: 0;
+       bottom: 60px;
+        
+    }
+    .slide{
+        width: 450px;
+
+    }
+     .slide2{
+        width: 500px;
+    }
+    .slide2 img{
+        width: 90px;
+    }
+    .lienhe{
+        height: 400px;
+        width: 100%;
+    }
+}
+/* // Extra small devices (portrait phones, less than 576px) */
+@media screen and (max-width: 575.98px) { 
+    .banner_in h3:first-child{
+        font-size: 1rem;
+    }
+    .banner_in h3{
+        font-size: 1rem;
+    }
+    .banner_in p{
+        font-size: .2rem;
+    }
+    .banner .banner_in button{
+        width:120px ;
+        font-size: .8rem;
+    }
+    .banner_in{
+        width: 30rem;
+        padding-top: -9rem;
+        font-size: .1rem;
+        transform: scale(.8);
+        }
+    .slide{
+        width: 230px;
+    }
+    .text_l{
+        display: none;
+    }
+    .add_tt_in table{
+        margin: 0;
+        padding: 0;
+        display: none;
+    }
+    .len{
+        width: 400px    ;
+        margin-left:  auto;
+        margin-right: auto;
+        margin-top: -100px;
+     }
+     .ketnoi img{
+        width: 50px;
+     }
+     .banner{
+    height: 1500px;
+    }
+    /* .banner.banner_in{
+     padding-top: 0;
+     font-size: 10px;
+     width: 30px;
+     } */
+    .len{
+        margin-top: 0px;
+     }
+     .ghe img{
+        width: 120px;
+     }
+     .ghe{
+       bottom: 40px; 
+     }
+     .slide2{
+        width: 350px;
+     }
+     .slide2 img{
+        height: 50px;
+        height: 45px;
+     }
+     .add_tt_in .bottomSpnb{
+        width: 100px;
+    }
+     .add_tt{
+        height: 150px;
+        background-size: cover;
+     }
+     .add_tt_in{
+        width: 550px;
+        font-size: 10px;
+    }
+    .add_tt_in h6{
+        font-size: 10px;
+    }
+    input[type=text] {
+       width: 120px;
+    }
+    input[type=submit] {
+        margin-left: -15px;
+        width: 60px;
+    }
+    .lienhe{
+        height: 490px;
+    }
+    .text_l{
+        margin-left: 70px;
+    }
+    .ghe{
+        opacity: 1;
+    }
+     
+ }

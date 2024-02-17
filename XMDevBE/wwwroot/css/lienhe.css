@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f3f3f3 !important;
+}
+
+header {
+    background-color: #fff;
+    height: 108px;
+}
+
+    header .logo {
+        line-height: 100px;
+    }
+
+    header #nav_main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        header #nav_main li {
+            list-style-type: none;
+        }
+
+            header #nav_main li a {
+                text-decoration: none;
+                font-size: 1.25rem;
+                text-transform: capitalize;
+                line-height: 108px;
+                color: black;
+                font-weight: 600;
+            }
+
+                header #nav_main li a i {
+                    color: black;
+                }
+
+/* Border */
+
+#nav_main > li > a {
+    position: relative;
+}
+
+    #nav_main > li > a::before {
+        content: "";
+        position: absolute;
+        width: 60px;
+        left: 0;
+        top: 100%;
+        border: 2px solid #bd945f;
+        animation: menuHover .2s ease-in 1;
+        display: none;
+    }
+
+#nav_main li.active a::before,
+#nav_main > li:hover > a::before {
+    border-color: #bd945f;
+    display: block;
+}
+
+#nav_main > li:hover #turnon {
+    cursor: pointer;
+}
+
+@keyframes menuHover {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 60%;
+        opacity: 1;
+    }
+}
+
+/* BANNER LOGO */
+section.banner {
+    position: relative;
+    background: url('../img/lienhe.png') no-repeat;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+}
+
+.banner_logo {
+    padding-top: 6rem;
+    padding-bottom: 8.5rem;
+}
+
+    .banner_logo .img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .banner_logo .img img {
+            color: #fff;
+        }
+
+    .banner_logo .banner_title {
+        text-align: center;
+    }
+
+        .banner_logo .banner_title h1 {
+            padding-top: 1rem;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+/*  CONTACT */
+section.contact .container {
+    position: relative;
+    background-color: #fff;
+    margin-top: -2.5rem;
+    margin-bottom: 3rem;
+}
+
+section.contact .row .col-md-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.contact .row {
+    padding-top: 4.5rem;
+    padding-bottom: 4rem;
+}
+
+.contact_img img {
+    width: 100%;
+}
+
+.contact_content h3 {
+    color: #bd945f;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.contact_content input {
+    width: 100%;
+    margin-bottom: 0.5em;
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-weight: 600;
+    border: 2px solid #bd945f;
+}
+
+    .contact_content input::placeholder {
+        color: #2c2e53;
+    }
+
+.contact .btn {
+    background-color: #bd945f;
+    padding: 10px 30px;
+    border-radius: 0;
+    color: #fff;
+    font-weight: 600;
+}
+/* MINICART */
+.miniCart-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background-color: #FFF;
+    z-index: 2;
+}
+
+    .miniCart-container .miniCart-header {
+        width: 100%;
+        height: 80px;
+        color: #fff;
+        display: flex;
+        padding: 0 20px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #000;
+    }
+
+        .miniCart-container .miniCart-header .miniCart-title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .miniCart-container .miniCart-header .miniCart-closeBtn {
+            width: 30px;
+            height: 30px;
+            color: #fff;
+            background-color: #000;
+            cursor: pointer;
+        }
+
+    .miniCart-container .miniCart-tagline {
+        font-size: 12px;
+        background-color: #ecebea;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 40px;
+    }
+
+        .miniCart-container .miniCart-tagline .tagline-icon {
+            margin-right: 12px;
+        }
+
+    .miniCart-container .miniCart-body {
+        height: 60%;
+        padding: 30px 30px;
+    }
+
+        .miniCart-container .miniCart-body .miniCart-item {
+            display: flex;
+        }
+
+            .miniCart-container .miniCart-body .miniCart-item .cartItem-img {
+                position: relative;
+                width: 120px;
+            }
+
+                .miniCart-container .miniCart-body .miniCart-item .cartItem-img img {
+                    width: 76px;
+                    height: 76px;
+                    float: right;
+                }
+
+                .miniCart-container .miniCart-body .miniCart-item .cartItem-img button {
+                    width: 20px;
+                    height: 20px;
+                    border: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    font-size: 8px;
+                    background-color: #ecebea;
+                    cursor: pointer;
+                }
+
+            .miniCart-container .miniCart-body .miniCart-item .cartItem-box {
+                width: 100%;
+                padding: 0 20px;
+            }
+
+                .miniCart-container .miniCart-body .miniCart-item .cartItem-box .cartItem-boxInfo {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 12px;
+                }
+
+                    .miniCart-container .miniCart-body .miniCart-item .cartItem-box .cartItem-boxInfo h3 {
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+
+                    .miniCart-container .miniCart-body .miniCart-item .cartItem-box .cartItem-boxInfo .cartItem-infoPrice .cartItem-newPrice {
+                        font-size: 14px;
+                        font-weight: 700;
+                        text-align: right;
+                        color: #161a21;
+                    }
+
+                    .miniCart-container .miniCart-body .miniCart-item .cartItem-box .cartItem-boxInfo .cartItem-infoPrice .cartItem-oldPrice {
+                        font-size: 12px;
+                        text-align: right;
+                        text-decoration-line: line-through;
+                        color: #161a21;
+                        padding-top: 8px;
+                    }
+
+                .miniCart-container .miniCart-body .miniCart-item .cartItem-box .cartItem-itemOption {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 12px;
+                    align-items: center;
+                }
+
+                    .miniCart-container .miniCart-body .miniCart-item .cartItem-box .cartItem-itemOption .cartItem-btnQuantity {
+                        display: flex;
+                        border-left: 1px solid #d6d6d4;
+                        align-items: center;
+                    }
+
+                        .miniCart-container .miniCart-body .miniCart-item .cartItem-box .cartItem-itemOption .cartItem-btnQuantity button {
+                            border: none;
+                            color: #fff;
+                            width: 14px;
+                            height: 14px;
+                            background-color: #999;
+                            border-radius: 14px;
+                            margin: 0 12px;
+                            cursor: pointer;
+                        }
+
+    .miniCart-container .miniCart-footer {
+        border-top: 1px solid rgba(22,26,33,.2);
+        padding: 24px 30px 40px;
+    }
+
+        .miniCart-container .miniCart-footer .miniCart-total {
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+            .miniCart-container .miniCart-footer .miniCart-total .miniCart-price {
+                color: #ff5e57;
+                font-weight: 700;
+            }
+
+        .miniCart-container .miniCart-footer button {
+            width: 100%;
+            height: 44px;
+            background-color: #53c66e;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            border: none;
+            transition: .3s ease-out;
+            margin-bottom: 20px;
+        }
+
+            .miniCart-container .miniCart-footer button:hover {
+                color: #d6d6d4;
+                cursor: pointer;
+            }
+
+            .miniCart-container .miniCart-footer button svg {
+                width: 14px;
+                margin-left: 4px;
+                margin-bottom: 2px;
+            }
+
+        .miniCart-container .miniCart-footer .miniCart-estimationText {
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+            .miniCart-container .miniCart-footer .miniCart-estimationText .miniCart-estimationDate {
+                color: #53c66e;
+            }
+
+/* FOOTER */
+footer {
+    background: #363636;
+    padding: 70px 0 50px 0;
+}
+
+.footer_main .row {
+    color: #fff;
+    padding: 0 96px;
+}
+
+.footer_main h5 {
+    font-size: 18px;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+    .footer_main h5::before {
+        content: "";
+        position: absolute;
+        border: 2px solid #fff;
+        left: 0%;
+        top: 100%;
+        width: 100px;
+    }
+
+.footer_main h4 {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.footer_item-a,
+.footer_item-b {
+    list-style-type: none;
+}
+
+    .footer_item-a li {
+        margin-bottom: 16px;
+    }
+
+    .footer_item-b li {
+        margin-bottom: 9px;
+    }
+
+        .footer_item-a li a,
+        .footer_item-b li a {
+            text-decoration: none;
+            color: #d6d6d6;
+            font-weight: bold;
+        }
+
+.footer_main .item {
+    padding-right: 5px;
+}
+
+.footer_main .footer_icon {
+    display: flex;
+}
+
+    .footer_main .footer_icon li {
+        list-style-type: none;
+        padding-right: 10px;
+        font-size: 24px;
+    }
+
+        .footer_main .footer_icon li a {
+            color: #fff;
+        }

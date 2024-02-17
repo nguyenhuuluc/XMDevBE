@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    font-family: Gotham-Medium;
+    display: flex;
+    justify-content: space-between;
+}
+.main .logo{
+    margin: 1rem 0;
+}
+.main .logo img{
+    width: 6rem;
+}
+.navs{
+    width: 800px;
+    justify-content: space-between;
+}
+.gachduoi{
+    width: 1px;
+    height: 5px;
+    border: 3px solid #bd945f;
+    opacity: 0;
+}
+.navh:hover .gachduoi{
+    width: 60px;
+    height: 5px;
+    border: 3px solid #bd945f;
+    opacity: 1;
+    transition: 0.5s;
+}
+.banner{
+    position: relative;
+    background: url(../img/banner.png) no-repeat;
+    background-size: cover;
+    font-size: 18px;
+}
+.banner .banner_in{
+    padding: 8em 4em 12em 4em;  
+}
+.banner .banner_in h3:first-child{
+    color: #2c2e53;
+}
+.banner .banner_in h3{
+    color: #bd945f;
+    font-family:Gotham-Ultra ;
+    text-transform: uppercase;
+}
+.banner .banner_in p{
+    width: 60%;
+    text-align: justify;
+    font-family: Gotham-Medium;
+    font-size: 1.1em;
+    margin: 1rem 0;
+}
+.banner .banner_in button{
+    border: 2px solid #bd945f;
+    background-color: #bd945f;
+    width: 10rem;
+    height: 5rem;
+    font-size: 1.2rem;
+    font-family:Gotham-Medium ;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1901.98px) { }
+@media screen and (max-width: 1201.98px) {
+ }
+@media screen and (max-width: 992.98px) { }
+@media screen and (max-width: 767.98px) { 
+    .banner_in{
+    }
+    .banner .banner_in p,.banner .banner_in h3{
+ }
+}
+@media screen and (max-width: 575.98px) { 
+    .banner_in{
+    }
+}

@@ -1,0 +1,118 @@
+﻿@{
+    Layout = "~/Areas/admin/views/shared/_Layout.cshtml";
+}
+
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Add / Edit Product</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <div class="enter-form">
+
+    </div>
+
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        GetProductDetail();
+    });
+
+    function GetProductDetail() {
+
+        var urlParams = new URLSearchParams(window.location.search);
+        var productId = urlParams.get('id');
+
+        $.ajax({
+            url: '/admin/home/GetProductById/' + productId,
+            method: 'GET',
+            contentType: "application/json",
+            beforeSend: function () {
+                console.log("before send...!");
+            },
+            success: function (reponse) {
+                const len = reponse.length;
+                console.log(reponse);
+                for (var i = 0; i < len; ++i) {
+                    let cate = reponse[i];
+
+                    let table = `
+                                     <form role="form">
+                      <div class="box-body">
+                            <input type="number" id="id" hidden="hidden" value="${cate.id}" />
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter name" value="${cate.tenSP}">
+                        </div>
+                        <div class="form-group">
+                            <label for="MaLoaiSP">MaLoaiSP</label>
+                                    <input type="text" class="form-control" id="MaLoaiSP" placeholder="Enter LoaiSP_Id" value="${cate.loaiSP_Id}">
+                        </div>
+                        <div class="form-group">
+                            <label for="MaThuongHieu">MaThuongHieu</label>
+                                    <input type="text" class="form-control" id="MaThuongHieu" placeholder="Enter ThuongHieu_Id" value="${cate.thuongHieu_Id}">
+                        </div>
+                        <div class="form-group">
+                          <label for="price">Price</label>
+                              <input type="text" class="form-control" id="price" placeholder="Price" value="${cate.giaBan}">
+                        </div>
+                        <div class="form-group">
+                            <label for="SL">Số lượng</label>
+                            <input type="text" class="form-control" id="SL" placeholder="Quantity" value="${cate.soLuong}">
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Image</label>
+                                <input type="text" class="form-control" id="image" placeholder="Image" value="${cate.hinhAnh}">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                                <input type="text" class="form-control" id="description" placeholder="Description" value="${cate.moTa}">
+                        </div>
+                      </div>
+                      <!-- /.box-body -->
+
+                      <div class="box-footer">
+                        <button type="submit" onclick="add()" class="btn btn-primary">Update</button>
+                      </div>
+                    </form>`;
+
+                    $('.enter-form').append(table);
+                }
+            },
+            error: function (response) { },
+        });
+    }
+    function add() {
+        let id = $('#id').val();
+            let obj = {
+                Id: id ? id : 0,
+                TenSP: $('#name').val(),
+                LoaiSP_Id: $('#MaLoaiSP').val(),
+                ThuongHieu_Id: $('#MaThuongHieu').val(),
+                GiaBan: $('#price').val(),
+                SoLuong: $('#SL').val(),
+                HinhAnh: $('#image').val(),
+                MoTa: $('#description').val(),
+            }
+            $.ajax({
+                url: "/admin/home/add",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(obj),
+                beforeSend: function () {
+                    console.log("loading...");
+                },
+                success: function (res) {
+                    alert("Cập nhật thông tin danh mục thành công");
+                    window.location.replace("https://localhost:7262/admin/home/index");
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            })
+    }
+</script> 

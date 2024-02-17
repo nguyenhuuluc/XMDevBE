@@ -1,0 +1,191 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f3f3f3 !important;
+}
+
+section.tintuc .container{
+    background: #fff;
+}
+
+section.tintuc .image h5 {
+    margin-left: 0.8rem;
+}
+
+section.tintuc .image .image-slider3 .image {
+    border: 2px solid #fff;
+}
+
+div.khoangtrong a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #bd945f;
+    font-weight: 700;
+}
+
+div.khoangtrong i {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    font-size: 12px;
+}
+
+.fourimg{
+    margin-top: .5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.image .fourimg img{
+    width: 20%;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+}
+
+section.tintuc .container {
+    background-color: #fff;
+}
+
+.slick-prev {
+    left: -10px !important;
+
+}
+
+.slick-next {
+    right: -10px !important;
+}
+
+/* RIGHT */
+div.category .cate_btn .btn{
+    padding: 0.2rem 3.5rem;
+    border: 2px solid #bd945f;
+    font-weight: 600;
+}
+
+div.category .cate_btn .btn:last-child{
+    padding: 0.2rem 3.5rem;
+    border: 2px solid #000;
+}
+
+div.category h6 {
+    text-decoration-line: line-through;
+}
+
+div.category h5:nth-of-type(2) {
+    color: #bd945f;
+}
+
+div.category p {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+div.category .protect {
+    border: 1px solid #363636;
+    font-weight: 500;
+}
+
+section.tintuc .detail .detail_content ul{
+    display: flex;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+section.tintuc .detail .detail_content ul li {
+    list-style: none;
+    padding-right: 2.5rem;
+    font-size: 1.4rem;
+    color: #bd945f;
+    font-weight: 500;
+}
+
+section.tintuc .detail .detail_content ul .line_active
+{
+    position: relative;
+    color: rgb(0, 0, 62);
+}
+
+section.tintuc .detail .detail_content ul .line_active::before {
+    content: "";
+    position: absolute;
+    border: 3px solid rgb(0, 0, 62);
+    margin-top: 0.40rem;
+    left: -10%;
+    top: 100%;
+    width: 10.1rem;
+}
+
+.verticalLine {
+    width: 3px; /* Line width */
+    background-color: #bd945f; /* Line color */
+    height: 100%; /* Override in-line if you want specific height. */
+    float: right;
+    margin-left: 2.5rem;
+}
+
+.line_bottom {
+    color: #bd945f;
+    border: 2px solid #bd945f;
+    width: 90%;
+}
+
+section.tintuc .detail .detail_content p {
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+}
+
+/* PRODUCT */
+
+section.Product {
+    background-color: #f3f3f3;
+}
+
+section.Product h3 {
+    position: relative;
+}
+
+section.Product h3::before {
+    content: "";
+    position: absolute;
+    border: 4px solid #bd945f;
+    margin-top: 0.5rem;
+    left: 0%;
+    top: 100%;
+    width: 100px;
+    margin-bottom: 2rem;
+}
+
+section.Product .container {
+    background-color: #fff;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+section.Product .container .row .content h5 {
+    text-align: center;
+    font-weight: 800;
+}
+
+section.Product .container .row .content .star {
+    text-align: center;
+}
+
+section.Product .container .row .content .star i{
+    color: #bd945f;
+}
+
+section.Product .container .row .content p:nth-of-type(1) {
+    color: grey;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+
+section.Product .container .row .content p:nth-of-type(2) {
+    color: #000;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 2rem;
+}
